@@ -6,11 +6,17 @@
 <h3>🗂️ Folder Structure.</h3>
 
 ├── assignments/ # Daily exercises and practice problems
+
 ├── functions/ # Function-based challenges
+
 ├── oop/ # Object-Oriented Programming
+
 ├── flask_intro/ # Introductory Flask projects
+
 ├── django_intro/ # Introductory Django projects
+
 ├── my_environments/ # Virtual environments (if any)
+
 ├── README.md # This file
 
 <h3>⚙️ Technologies Used</h3>
