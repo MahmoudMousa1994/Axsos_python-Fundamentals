@@ -11,13 +11,10 @@
 
 ├── oop/ # Object-Oriented Programming
 
-├── flask_intro/ # Introductory Flask projects
-
 ├── django_intro/ # Introductory Django projects
 
-├── my_environments/ # Virtual environments (if any)
+├── my_environments/ # Virtual environments 
 
-├── README.md # This file
 
 <h3>⚙️ Technologies Used</h3>
 
