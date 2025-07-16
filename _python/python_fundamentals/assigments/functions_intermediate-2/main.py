@@ -38,7 +38,7 @@ students = [
 ]
 def iterateDictionary(x):
     for player in x:
-        print("first_name -",player['first_name'],"," , "last_name -",player['last_name'])
+        print(f"first_name - {player['first_name']}, last_name - {player['last_name']}")
 iterateDictionary(students)
 
 # C- get valuse from a list of dictionaries
