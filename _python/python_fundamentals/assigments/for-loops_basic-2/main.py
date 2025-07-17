@@ -37,7 +37,10 @@ print(average([1,2,3,4]))
 
 # 5.length
 def length(x):
-    return len(x)
+    listlength = 0
+    for i in range(len(x)):
+        listlength += 1
+    return listlength
 print(length([1,2,3,5,9,7,5]))
 print(length([]))
 
@@ -98,5 +101,14 @@ def reverse_list(x):
         right -=1
     return x
 print(reverse_list([6,4,9,2,1,7,-2,6,]))
-
 # note : TA Ibraheim Khalil told me about the two pointer technique in a previous js assigment review
+
+# 9.reverse list another method
+def reverse_list(x):
+    for i in range(len(x)//2):
+        x[i],x[-1-i]=x[-1-i],x[i]
+    return x
+
+print(reverse_list([6,4,9,2,1,7,-2,6,]))
+
+

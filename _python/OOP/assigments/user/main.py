@@ -2,7 +2,7 @@ class User:
     def __init__(self,name,balance=0):
         self.name = name
         self.balance = balance
-        print(f"User name: {self.name} Current Balance: {self.balance}")
+        print(f"Creat Account, User name: {self.name} Current Balance: {self.balance}")
 
     def make_deposit(self,amount):
         self.balance += amount
