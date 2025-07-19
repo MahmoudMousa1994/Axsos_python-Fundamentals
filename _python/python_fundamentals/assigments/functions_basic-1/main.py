@@ -23,13 +23,14 @@ print(a())
 # 5
 def a():
     print(5)
+    return 5
 x=a()
 print(x)
 
 # 6
 def a(b,c):
     print(b+c)
-print(a(2,5))
+print(a(1,2) +a(2,3))
 
 # 7
 def a(b,c):

@@ -16,8 +16,8 @@ class User:
         print(f"User: {self.name}, Balance: ${self.balance}")
 
     def transfer_money(self,other_user,amount):
-        self.balance -= amount
-        other_user.balance += amount
+        self.make_withdrawal(amount)
+        other_user.make_deposit(amount)
         print(f"Transfer: ${amount} from: {self.name}, to: {other_user.name}")
 
 

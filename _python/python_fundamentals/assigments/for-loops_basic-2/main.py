@@ -32,7 +32,8 @@ def average(x):
     sum=0
     for i in range(len(x)):
         sum+=x[i]
-    return sum/len(x)
+    avg = sum/len(x)
+    return avg
 print(average([1,2,3,4]))
 
 # 5.length
@@ -72,24 +73,33 @@ print(maximum([5,7,9,66,4,2,1,-6]))
 
 # 8 ultimate analysis
 def ultimate_analysis(x):
-    ua={}
-    sum=0
-    min = x[0]
-    max = x[0]
-    for i in range(len(x)):
-        sum+=x[i]
-        if x[i]<min:
-            min=x[i]
-        elif x[i]>max:
-            max=x[i]
-    ua["sumTotal"]=sum
-    ua["average"]=sum/len(x)
-    ua["minimum"]= min
-    ua["maximum"]=max
-    ua["length"]=len(x)
+    ultimateanalysis={
+        'sum':sum_total(x),
+        'avg':average(x),
+        'min':minimum(x),
+        'max':maximum(x),
+        'length':length(x)
+    }
+    # sum=0
+    # min = x[0]
+    # max = x[0]
+    # for i in range(len(x)):
+    #     sum+=x[i]
+    #     if x[i]<min:
+    #         min=x[i]
+    #     elif x[i]>max:
+    #         max=x[i]
+    # ua["sumTotal"]=sum
+    # ua["average"]=sum/len(x)
+    # ua["minimum"]= min
+    # ua["maximum"]=max
+    # ua["length"]=len(x)
 
-    return ua
-print(ultimate_analysis([37,2,1,-9]))
+    return ultimateanalysis
+x = [37,2,1,-9]
+print(ultimate_analysis(x))
+# call the pravios functions
+
 
 # 9.reverse list
 def reverse_list(x):

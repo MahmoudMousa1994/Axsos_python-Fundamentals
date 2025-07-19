@@ -1,12 +1,4 @@
 # 1.count down 
-down = []
-def countdown(x):
-    for i in range(5,-1,-1):
-        down.append(i)
-countdown(5)
-print(down)
-
-# 1.count down another method
 def countdown(x):
     down = []
     for i in range(5,-1,-1):
@@ -24,6 +16,7 @@ print(printAndReturn(9,4))
 def first_plus_length(x):
     return(x[0]+len(x))
 print(first_plus_length([9,8,7,6,5,4]))
+#  allway make the return clean without equation
 
 # values greater than second
 def values_greater_than_second(x):
@@ -43,4 +36,7 @@ def length_and_value(x,y):
     return lav
 print(length_and_value(4,7))
 print(length_and_value(9,4))
+
+
+# i need to edit the name convintion and the returns
 
