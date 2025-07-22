@@ -25,13 +25,22 @@ class BankAccount:
             self.balance +=self.balance * self.int_rate
             return self
 
-guido = BankAccount(0.03 , 300)
-Mahmoud = BankAccount(0.025,600)
-
-guido.display_account_info().deposit(42).deposit(7).deposit(3.9).display_account_info().withdraw(90).display_account_info().yield_interest().display_account_info()
-Mahmoud.display_account_info().deposit(200).deposit(500).display_account_info().withdraw(300).withdraw(300).withdraw(300).withdraw(450).display_account_info().yield_interest().display_account_info()
 
 
+class User:
+    def __init__(self, name,email):
+        self.name = name
+        self.email = email
+        self.account = BankAccount(int_rate= 0.02, balance=0)
+
+    def user_info(self):
+        print(f"Name: {self.name}")
+        print(f"email: {self.email}")
+        self.account.display_account_info()
+        return self
 
 
+Mahmoud = User("Mahmoud Shuman", "mahmoud.shuman@outlook.com")
 
+Mahmoud.account.deposit(100).deposit(500).withdraw(650)
+Mahmoud.user_info()
