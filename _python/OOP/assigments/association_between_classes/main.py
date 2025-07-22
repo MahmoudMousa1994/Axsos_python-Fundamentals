@@ -42,5 +42,5 @@ class User:
 
 Mahmoud = User("Mahmoud Shuman", "mahmoud.shuman@outlook.com")
 
-Mahmoud.account.deposit(100).deposit(500).withdraw(650)
+Mahmoud.account.deposit(1000).deposit(999).withdraw(3350)
 Mahmoud.user_info()
