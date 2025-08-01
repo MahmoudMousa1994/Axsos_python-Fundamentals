@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Checker Board</title>
+</head>
+<style>
+/* jinja is not active in css file !!?? */
+.color1{
+    background-color: {{color1}};
+}
+.color2{
+    background-color: {{color2}};
+}
+</style>
+
+<body>
+<div class="checker_board">
+    {% for i in range(rows) %}
+        <div class="row">
+            {% for j in range(cols) %}
+            {# i used jinja to change the class "color" number #}
+            <div class="box color{{(j+i)%2 +1}}"></div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+    
+</body>
+</html>
