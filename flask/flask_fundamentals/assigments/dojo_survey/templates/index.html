@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>post form submission</title>
+</head>
+<body>
+    <main class="dis-flex flex-column">
+        <h1>Developer info</h1>
+        <form action="/result" method="post">
+            <div class="name dis-flex">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="genders dis-flex">
+                <label>Gender Identity:</label>
+                <div class="genders-types">
+                    <input type="radio" id="mr" name="gender" value="male">
+                    <label for="mr">Male</label>
+                    <input type="radio" id="mrs" name="gender" value="femail">
+                    <label for="mrs">Female</label>
+                    <input type="radio" id="ret" name="gender" value="Retarded">
+                    <label for="ret">Retarded</label>
+                </div>
+            
+            </div>
+            <div class="location dis-flex">
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="location">
+                    <option value="Jerusalem">Jerusalem</option>
+                    <option value="Gaza">Gaza</option>
+                    <option value="Ram Allah">Ram Allah</option>
+                </select>
+            </div>
+            <div class="fav_lang dis-flex">
+                <label for="favorite_language">Favorite Language:</label>
+                <select name="favorite_language" id="language">
+                    <option value="Python">Python</option>
+                    <option value="JS">Java Script</option>
+                    <option value="HTML">HTML</option>
+                </select>
+            </div>
+            <div class="comment dis-flex flex-column">
+                <label for="comment">Comment (optinal):</label>
+                <textarea name="comment" id="comment" cols="30" rows="3"></textarea>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="agree" name="accept">
+                <label for="agree">Yes, I would like to receive periodic email updates</label>
+            </div>
+            <input class="btn" type="submit" value="Button">
+        </form>
+    </main>
+</body>
+</html>
