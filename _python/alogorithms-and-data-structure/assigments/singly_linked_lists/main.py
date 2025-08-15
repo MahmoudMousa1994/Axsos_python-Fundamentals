@@ -77,3 +77,72 @@ my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").pri
 
 # mylst = SingleList()
 # mylst.insert_first(10).insert_first(15).insert_last(5).print_valuse()
+
+
+
+import random
+
+class Song:
+    def _init_(self,value):
+        self.title = value
+        self.next = None
+
+class PlayList:
+    def _init_(self):
+        self.head = None
+    
+    def addToTal(self,value):
+        newNode = Song(value)
+        if not self.head:
+            self.head = newNode
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = newNode
+    
+    def addtoFront(self,value):
+        newNode = Song(value)
+        newNode.next = self.head
+        self.head = newNode
+    
+    def addAtIndex(self,index,value):
+        newNode = Song(value)
+        current = self.head
+        for i in range(index):
+            current = current.next
+
+        newNode.next = current.next
+        current.next = newNode
+
+    def play(self):
+        current = self.head
+        while current:
+            print(current.title, end="-->")
+            current = current.next
+        print("Null")
+    
+    def getLengthPlayList(self):
+        current = self.head
+        count = 0
+        while current.next:
+            count += 1
+            current = current.next
+        return count
+    
+    def shuffle(self):
+        count = self.getLengthPlayList()
+        randInt = random.randint(0,count)
+        current = self.head
+        for i in range(randInt):
+            current = current.next  
+        print(current.title)
+
+newList = PlayList()
+newList.addToTal("Kiss Me")
+newList.addToTal("Dance Off")
+newList.addToTal("Real Love")
+newList.addToTal("Self Love")
+newList.addAtIndex(3,"new")
+newList.shuffle()
+# newList.play()
