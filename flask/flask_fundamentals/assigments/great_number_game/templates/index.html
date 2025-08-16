@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Great Number Game!</title>
+</head>
+<body>
+    <main class="dis-flex flex-column">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100, Take a guess</p>
+        <div class="result dis-flex">
+            <h1>Too low!</h1>
+        </div>
+        <form class="dis-flex flex-column" action="/result" method="post">
+            <input type="number" name="guess" id="num">
+            <input class="btn" type="submit" value="Button">
+        </form>
+    </main>
+</body>
+</html>
