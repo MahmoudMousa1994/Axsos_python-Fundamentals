@@ -1,0 +1,4 @@
+[client]
+port = 3307
+[mysqld]
+port = 3307
