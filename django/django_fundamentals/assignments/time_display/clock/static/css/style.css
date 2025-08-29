@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    /* background-color: aqua; */
+    width: fit-content;
+    margin: 50px auto;
+
+}
+main h4{
+    border: solid black;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.date-time{
+    text-align: center;
+    border: solid black;
+    padding: 10px 100px;
+    font-size: xx-large;
+}

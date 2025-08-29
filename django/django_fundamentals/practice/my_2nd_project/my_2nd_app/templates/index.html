@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>info from server</h1>
+    <p>color:{{favorit_color}}</p>
+    <p>pets</p>
+    <ul>
+        {%for pet in pets%}
+            <li>{{pet}}</li>
+        {%endfor%}
+    </ul>
+</body>
+</html>

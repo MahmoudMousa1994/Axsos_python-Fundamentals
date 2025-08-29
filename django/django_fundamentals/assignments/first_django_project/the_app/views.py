@@ -20,7 +20,7 @@ def show(request, num):
 def edit(request, num):
     return HttpResponse(f"placeholder to edit blog:{num}")
 
-def destroy(request):
+def destroy(request, num):
     return redirect(index)
 
 def bonus(request):

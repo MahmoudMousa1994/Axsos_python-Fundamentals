@@ -1,5 +1,5 @@
 """
-URL configuration for first_django_project project.
+URL configuration for my_2nd_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -18,6 +18,6 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('the_app.urls')),
-    # path('admin/', admin.site.urls),
+    path('', include('my_2nd_app.urls')),
+    # path('admin/', admin.site.urls)
 ]
