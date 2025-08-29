@@ -20,7 +20,7 @@ def destroy_session():
 
 @app.route('/add2')
 def add2():
-    session['view_count'] += 1
+    session['view_count'] += 2
     return redirect("/")
 
 @app.route('/addnum', methods=['POST'])

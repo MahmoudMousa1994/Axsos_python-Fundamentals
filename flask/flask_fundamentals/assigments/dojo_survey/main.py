@@ -9,7 +9,7 @@ def index():
 def creat_user():
     print("Got Post Info")
     print(request.form)
-    name_from_form = request.form['name']
+    name_from_form = request.form['user_name']
     gender_from_form = request.form['gender']
     location_from_form = request.form['location']
     favorite_language = request.form['favorite_language']
