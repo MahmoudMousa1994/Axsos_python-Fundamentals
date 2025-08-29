@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>counter</title>
+</head>
+<body>
+    <main class="dis-flex flex-column">
+        <h1>visit Counter</h1>
+        <p>{{ request.session.view_count}} Times</p>
+        <h1>all Counter</h1>
+        <p>{{ request.session.view_add_count}} Times</p>
+        <a href="/add2">Add 2</a>
+        <a href="/destroy_session">Clear</a>
+
+        <form class="dis-flex flex-column" action="/addnum" method="post">
+            {% csrf_token %}
+            <label for="num">add by:</label>
+            <input type="number" name="num" id="num">
+            <input class="btn" type="submit" value="Button">
+        </form>
+    </main>
+</body>
+</html>
