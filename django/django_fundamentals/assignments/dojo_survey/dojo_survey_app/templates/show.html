@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Dojo survey</title>
+</head>
+<body>
+    <main>
+        <h1>show page</h1>
+        <h3>Info Submitted</h3>
+        <p>name: {{ name_on_result }}</p>
+        <p>Gender: {{ gender_on_result }}</p>
+        <p>Location: {{ location_on_result }}</p>
+        <p>Favorite Language: {{ fav_lang_on_result }}!!!</p>
+        <p>Comment: {{ comment_on_result }}</p>
+        <p>receive periodic email updates: {{ receve_email_on_result }}</p>
+    
+        <a href="http://localhost:8000/"><input class="btn" type="submit" value="Button"></a>
+        
+    </main>
+
+</body>
+</html>
