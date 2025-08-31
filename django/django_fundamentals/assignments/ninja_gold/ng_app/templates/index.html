@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NINJA Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="dis-flex flex-column">
+        <h1>Your Gold: <span class="gold_count">{{request.session.gold}}</span></h1>
+        <div class="places dis-flex ">
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="place" value="farm">
+                <h1>Farm</h1>
+                <p>(earns 10-20 gold)</p>
+                <button class="find_gold_btn" type="submit">Find Gold!</button>
+            </form>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="place" value="cave">
+                <h1>Cave</h1>
+                <p>(earns 10-20 gold)</p>
+                <button class="find_gold_btn" type="submit">Find Gold!</button>
+            </form>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="place" value="house">
+                <h1>House</h1>
+                <p>(earns 10-20 gold)</p>
+                <button class="find_gold_btn" type="submit">Find Gold!</button>
+            </form>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="place" value="quest">
+                <h1>Quest</h1>
+                <p>(earns/takes 0-50 gold)</p>
+                <button class="find_gold_btn" type="submit">Find Gold!</button>
+            </form>
+        </div>
+
+        <h2>Activities</h2>
+        <div class="activities">
+            {% for activity in activities %}
+                <p>{{ activity }}</p>
+            {% endfor %}
+        </div>
+
+        <form action="/reset" method="post">
+    {% csrf_token %}
+    <button class="find_gold_btn"  type="submit">Reset Game</button>
+</form>
+    </main>
+    
+</body>
+</html>
