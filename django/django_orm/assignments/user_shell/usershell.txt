@@ -1,0 +1,26 @@
+(py3Env) C:\Users\mahmo\Documents\python_stack\django\django_orm\assignments\user_shell>py manage.py makemigrations  
+(py3Env) C:\Users\mahmo\Documents\python_stack\django\django_orm\assignments\user_shell>python -m pip install Pillow    
+(py3Env) C:\Users\mahmo\Documents\python_stack\django\django_orm\assignments\user_shell>py manage.py makemigrations     
+(py3Env) C:\Users\mahmo\Documents\python_stack\django\django_orm\assignments\user_shell>py manage.py migrate            
+(py3Env) C:\Users\mahmo\Documents\python_stack\django\django_orm\assignments\user_shell>py manage.py shell
+>>> from user_app.models import *
+>>> User.objects.create(first_name="Mahmoud",last_name="Shuman",email_address="mahmoud.shuman@outlook.com",age="31")
+<User: User object (1)>
+>>> User.objects.create(first_name="ahmad",last_name="mohammad",email_address="ahmad@outlook.com",age="29")
+<User: User object (2)>
+>>> User.objects.create(first_name="Mike",last_name="Jackson",email_address="mike@outlook.com",age="36")
+<User: User object (3)>
+>>>>>> User.objects.all()
+<QuerySet [<User: user's fill name is Mahmoud Shuman>, <User: user's fill name is ahmad mohammad>, <User: user's fill name is Mike Jackson>]>
+>>> User.objects.all()
+<QuerySet [<User: user's fill name is Mahmoud Shuman>, <User: user's fill name is ahmad mohammad>, <User: user's fill name is Mike Jackson>]>
+>>> User.objects.last()
+<User: user's fill name is Mike Jackson>
+>>> User.objects.first()
+<User: user's fill name is Mahmoud Shuman>
+>>>>>> user_to_update = User.objects.get(id=3)
+>>> user_to_update.last_name = "Jack"
+>>> user_to_update.save()
+>>> User.objects.all().order_by("first_name")
+<QuerySet [<User: user's fill name is Mahmoud Shuman>, <User: user's fill name is Mike Jack>]>
+>>>

@@ -3,7 +3,10 @@ class Stack:
         self.stack = []
 
     def push(self, value):
-        self.stack.append(value)
+        if len(self.stack) <= 10:
+            self.stack.append(value)
+        else:
+            print("THE STACK IS FULL")
         return self
     
 
@@ -26,5 +29,5 @@ class Stack:
 
 stack = Stack()
 
-stack.peek().pop().push(10).push(20).push(30).peek().pop().peek()
+stack.peek().pop().push(10).push(20).push(30).push(20).push(20).push(20).push(20).push(20).push(20).push(20).push(20).push(20).push(20).push(20).push(20).peek().pop().peek()
 
