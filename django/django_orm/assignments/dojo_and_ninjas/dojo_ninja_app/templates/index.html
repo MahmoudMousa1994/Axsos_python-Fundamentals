@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo and Ninjas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="dis-flex flex-column">
+        <section class="adding dis-flex">
+            <form  action="/add_dojo" method="post">
+                <h2>Add a Dojo</h2>
+                {% csrf_token %}
+                <div class="add-user dis-flex flex-column">
+                    <div>
+                        <label for="dojo_name">Name:</label>
+                        <input type="text" id="dojo_name" name="dojo_name">
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+    
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state">
+    
+                    </div>
+                </div>
+                <input class="btn" type="submit" value="Add">
+            </form>
+    
+            <form  action="/add_ninja" method="post">
+                <h2>Add a ninja</h2>
+                {% csrf_token %}
+                <div class="add-user dis-flex flex-column">
+                    <div>
+                        <label for="ninja_first_name">First Name:</label>
+                        <input type="text" id="ninja_first_name" name="ninja_first_name">
+                    </div>
+                    <div>
+                        <label for="ninja_last_name">Last Name</label>
+                        <input type="text" id="ninja_last_name" name="ninja_last_name">
+    
+                    </div>
+                    <div>
+                        <label for="dojo_to_ninja">Dojo</label>
+                        <select name="dojo_to_ninja" id="dojo_to_ninja">
+                            {% for dojo in all_dojos %}
+                                <option value="{{ dojo.id }}">{{ dojo.name}}</option>
+                            {% endfor %}
+                        </select>
+    
+                    </div>
+                </div>
+                <input class="btn" type="submit" value="Add">
+            </form>
+        </section>
+        <section class="display">
+            <h2>All the Dojos</h2>
+            {% for dojo in all_dojos %}
+                <h3>{{ dojo.name }}</h3>
+                {% for ninja in dojo.ninjas.all%}
+                <ul>
+                    <li>{{ninja.first_name}} {{ninja.last_name}}</li>
+                </ul>
+                {% endfor %}
+                <div>
+                    <form action="delete_dojo" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="dojo_id" value="{{dojo.id}}">
+                        <input class="btn" type="submit" value="Delete">
+                    </form>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+    
+</body>
+</html>

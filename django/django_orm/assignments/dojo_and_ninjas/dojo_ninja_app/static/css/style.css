@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.dis-flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+main{
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+    /* background-color: aquamarine; */
+}
+form{
+    /* border: solid black; */
+    padding: 30px;
+    width: 300px;
+    margin: 10px;
+}
+.add-user{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.btn{
+    background-color:#76a5af ;
+    color: white;
+    margin: 15px 0;
+    padding: 2px;
+    box-shadow: 3px 3px 0px black;
+    margin-left: auto;
+    display: block;
+}
