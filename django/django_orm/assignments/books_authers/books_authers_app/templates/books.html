@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{book.title}}</h1>
+    <h2>{{book.id}}</h2>
+    <div class="desc">
+        <h2>Description:</h2>
+        <p>{{book.desc}}</p>
+    </div>
+    <div class="authers">
+        <h2>Authors</h2>
+        <ul>
+        {% for auther in authers %}
+                <li>{{auther.first_name}} {{auther.last_name}}</li>
+                {% endfor %}
+            </ul>
+    </div>
+    <form action="/add_auther_to_book" method="post">
+        {% csrf_token %}
+        <select name="auther_id" id="add_auther" class="form-select">
+            {% for auther in all_the_authers %}
+                <option value="{{auther.id}}">{{auther.first_name}} {{auther.last_name}}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="book_id" value="{{book.id}}">
+        <input type="submit" value="add" class="btn btn-primary">
+    </form>
+    <a href="/authers" class="btn btn-primary">go to authers</a>
+    <a href="/" class="btn btn-primary">go to books</a>
+</body>
+</html>

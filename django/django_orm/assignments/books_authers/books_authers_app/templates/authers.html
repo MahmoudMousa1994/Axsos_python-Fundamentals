@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books and Authers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="d-flex p-2 bd-highlight">
+        <form action="add_auther" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" id="first_name" name="first_name" class="form-control">
+            </div>
+            <div>
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" id="last_name" name="last_name" class="form-control">
+            </div>
+            <div class="note">
+                <label class="form-label" for="note">Descripiton</label>
+                <textarea class="form-control form-control-sm " aria-label="With textarea" name="note" id="note" cols="20" rows="10"></textarea>
+            </div>
+            <input type="submit" value="add" class="btn btn-primary">
+        </form>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            {% for auther in all_the_authers %}
+            <tr>
+                <td>{{auther.id}}</td>
+                <td>{{auther.first_name}} {{auther.last_name}}</td>
+                <td><a href="/authers/{{auther.id}}">View</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <a href="/" class="btn btn-primary">go to books</a>
+</body>
+</html>

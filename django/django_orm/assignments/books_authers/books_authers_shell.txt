@@ -1,0 +1,110 @@
+................................................
+
+>>> Book.objects.create(title = "C Sharp")
+<Book: Book object (1)>
+>>> Book.objects.create(title = "Java")
+<Book: Book object (2)>
+>>> Book.objects.create(title = "Python")
+<Book: Book object (3)>
+>>> Book.objects.create(title = "PHP")
+<Book: Book object (4)>
+>>> Book.objects.create(title = "Ruby")
+<Book: Book object (5)>
+
+............................................................
+
+>>> Auther.objects.create(first_name = "Jane", last_name = "Austen")
+<Auther: Auther object (1)>
+>>> Auther.objects.create(first_name = "Emily", last_name = "Dickinson")
+<Auther: Auther object (2)>
+>>> Auther.objects.create(first_name = "Fyodor", last_name = "Dostoevsky")
+<Auther: Auther object (3)>
+ >> Auther.objects.create(first_name = "William", last_name = "Shakespeare")
+<Auther: Auther object (4)>
+>>> Auther.objects.create(first_name = "Lau", last_name = "Tzu")
+<Auther: Auther object (5)>
+>>>
+
+....................................................
+
+>>> edit_c = Book.objects.get(title = "C Sharp")
+>>> edit_c.title = "C#"
+>>> edit_c.save()
+>>>
+
+.....................................................
+
+>>> edit_fname = Auther.objects.get(id = 4)
+>>> edit_fname.first_name = "Bill"
+>>> edit_fname.save()
+>>>
+
+......................................................
+
+>>>
+>>> first_auther = Auther.objects.get(id = 1)
+>>> first_book = Book.objects.get(id = 1)
+>>> second_book = Book.objects.get(id = 2)
+>>> first_auther.books.add(first_book, second_book)
+>>>
+
+..............................................
+
+>>> second_auther = Auther.objects.get(id = 2)
+>>> therd_book = Book.objects.get(id = 3)
+>>> second_auther.books.add(first_book, second_book, therd_book)
+>>>
+
+..................................................
+
+>>>
+>>> therd_auther = Auther.objects.get(id = 3)
+>>> forth_book = Book.objects.get(id = 4)
+>>> therd_auther.books.add(first_book, second_book, therd_book, forth_book)
+>>>
+
+.......................................................
+
+>>> forth_auther = Auther.objects.get(id = 4)
+>>> all_books = Book.objects.all()
+>>> forth_auther.books.add(*all_books)
+
+..............................................
+>>> for auther in therd_book.authers.all():
+...     print(auther.first_name, auther.last_name)
+...
+Emily Dickinson
+Fyodor Dostoevsky
+Bill Shakespeare
+
+................................................................
+
+>>> therd_book.authers.remove(first_auther)
+>>>
+...............................................
+
+>>> fifh_auther = Auther.objects.get(id = 5)
+>>> forth_book.authers.add(fifh_auther)
+
+.........................................................
+
+>>> for book in therd_auther.books.all():
+...     print(book.title)
+...
+C#
+Java
+Python
+PHP
+>>>
+
+..............................................
+
+>>> fifth_book = Book.objects.get(id = 5)
+>>> for auther in fifth_book.authers.all():
+...     print(auther.first_name, auther.last_name)
+...
+Bill Shakespeare
+>>>
+
+................................................
+
